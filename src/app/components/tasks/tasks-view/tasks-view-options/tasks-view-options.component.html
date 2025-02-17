@@ -1,0 +1,4 @@
+<div class="views" >
+    <app-menu-item (click)="updateTaskView(view.name)" *ngFor="let view of views" [showIcon]="true" iconSrc={{view.iconSrc}} text={{view.text}} gap="4px" margin="0px" padding="12px 16px" />
+</div>
+<app-menu-item (click)="exportAppData()" [showIcon]="true" iconSrc="assets/icons/download.svg" text="Exporter" gap="4px" margin="0px" padding="12px 16px" />

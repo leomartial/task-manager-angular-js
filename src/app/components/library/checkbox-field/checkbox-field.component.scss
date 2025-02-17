@@ -1,0 +1,40 @@
+:host{
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+}
+.checkbox-field-container{
+    /* Box model */
+    width: 100%;
+    padding: var(--checkbox-field-padding);
+    margin: 4px 0px;
+    /* Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    /* Visuals */
+    overflow: hidden;
+    font-family: 'roboto', sans-serif; 
+    font-size: 14px;
+    font-weight: 500;
+    color: #444746;
+       
+}
+.checkbox-field-container:hover{
+    /* Visuals */
+    cursor: pointer;
+    background: #eaecef;
+    border-radius: 32px;
+}
+
+
+.checkbox-text{
+    /* Box model */
+    min-width: 24px;
+    width: 100%;
+}
+
+.checkbox-end-text{
+    min-width: 24px;
+}

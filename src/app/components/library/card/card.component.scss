@@ -1,0 +1,39 @@
+:host {
+  /*box model*/
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: var(--card-padding);
+  margin: var(--card-margin);
+  /*layout*/
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /*visual*/
+  background-color: white;
+  font-family: "roboto", sans-serif;
+  color: #444746;
+  border-radius: var(--card-border-radius);
+
+
+  
+}
+
+.card-header {
+  /*layout*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /*visual*/
+  font-weight: 450;
+  font-size: 20px;
+}
+
+.task-done{
+  text-decoration: line-through;
+}
+
+.delete-list{
+  cursor: pointer;
+
+}

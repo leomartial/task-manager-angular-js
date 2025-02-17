@@ -1,0 +1,15 @@
+.main{
+    /*box model*/
+    height: 100vh;
+    padding: 24px;
+    /*Layout*/
+    display: flex;
+    flex-direction: row;
+    gap:24px ;
+    /*visual*/
+    background-color: #F0F2F5;
+}
+
+.tasks{
+    flex: 1;
+}

@@ -1,0 +1,96 @@
+<div *ngIf="!isEdit" class="task-detail">
+  <app-icon
+    class="close-button"
+    iconSrc="assets/icons/close.svg"
+    (clickEvent)="onCloseEditor()"
+  />
+  <app-checkbox-field
+    iconCheckedSrc="assets/icons/radio_button_checked.svg"
+    iconUncheckedSrc="assets/icons/radio_button_unchecked.svg"
+    [isChecked]="task.done"
+    (cfOutput)="handleTaskCfOuput($event)"
+    text="{{ task.title }}"
+  />
+  <div class="task-detail-container">
+    <!--div class="task-detail-date">
+      <span>Date</span>
+      <p>{{ task.date }}</p>
+    </!div -->
+    <div class="task-detail-description">
+      <span> Description</span>
+      <p>{{ task.desc }}</p>
+    </div>
+  </div>
+  <div class="task-detail-container">
+    <span> Sous - tâches</span>
+    <div *ngIf="task.subtasks">
+      <app-checkbox-field
+        *ngFor="let subTask of task.subtasks"
+        [idCf]="subTask.id"
+        iconCheckedSrc="assets/icons/radio_button_checked.svg"
+        iconUncheckedSrc="assets/icons/radio_button_unchecked.svg"
+        text="{{ subTask.title }}"
+        [isChecked]="subTask.done"
+        [showDeleteIcon]="true"
+        endIconCheckedSrc="assets/icons/close.svg"
+        endIconUncheckedSrc="assets/icons/close.svg"
+        padding=""
+        [hostClick]="false"
+        (cfOutput)="handleSubTaskCfOutput($event)"
+        (deleteOutput)="handleSubTaskDelete($event)"  
+      />
+      <app-menu-item
+        [showIcon]="true"
+        iconSrc="assets/icons/add.svg"
+        text="Ajouter une sous-tâche"
+        (click)="handleAddSubTask()"
+        (keydown)="handleEnterKeyDown($event)"
+        (input)="inputChange($event)"
+        [isTextEditing]="isSubTaskInput"
+        padding=""
+        
+      />
+    </div>
+  </div>
+</div>
+<div *ngIf="!isEdit" class="delete">
+  <button (click)="handleTaskDeleteButton()" >supprimer</button>
+</div>
+
+<!--Add Task-->
+<form
+  [formGroup]="formGroup"
+  *ngIf="isEdit"
+  class="form-add-task"
+  (ngSubmit)="onFormSubmit()"
+>
+  <app-icon
+    class="close-button"
+    iconSrc="assets/icons/close.svg"
+    (clickEvent)="onCloseEditor()"
+  />
+  <div class="ff">
+    <label>Titre</label>
+    <input id="title" type="text" formControlName="title" />
+    <small *ngIf="formGroup.controls['title'].hasError('required')">
+      Le titre est requis.
+    </small>
+    <small *ngIf="formGroup.controls['title'].hasError('minlength')">
+      Le titre doit contenir au moins 3 caractères.
+    </small>
+  </div>
+  <!--div class="ff">
+    <label>Date</label>
+    <input id="date" type="date" formControlName="date" />
+    <div *ngIf="formGroup.controls['date'].invalid && formGroup.controls['date'].touched">
+      <small>La date est requise.</small>
+    </div>
+  </!div -->
+  <div class="ff">
+    <label>Description</label>
+    <textarea id="desc" formControlName="desc" rows="5"></textarea>
+  </div>
+  <div class="validate">
+    <button type="submit"  [disabled]="formGroup.invalid">Valider</button>
+  </div>
+</form>

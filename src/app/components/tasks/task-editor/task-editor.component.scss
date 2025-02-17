@@ -1,0 +1,83 @@
+:host {
+  /*Box model*/
+  width: 456px;
+  padding: 32px 16px;
+  /*layout*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*Visual*/
+  background-color: white;
+  border-radius: 12px;
+  small{
+    color: red;
+  }
+}
+
+
+.task-detail {
+  /*layout*/
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  span {
+    font-weight: 500;
+  }
+}
+.task-detail-container {
+  /*Box model*/
+  padding: 10px;
+  /*layout*/
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /*Visual*/
+  background-color: #f5f3f0;
+  border-radius: 4px;
+}
+
+
+.delete {
+  align-self: center;
+  button {
+    cursor: pointer;
+    padding: 10px 24px;
+    color: #616161;
+    border: #616161 solid 1px;
+    border-radius: 32px;
+  }
+}
+
+.close-button{
+  align-self: flex-end;
+}
+
+.form-add-task{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-weight: 450;
+  gap:16px
+  
+}
+.ff{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  textarea{
+    resize: none;
+  }
+}
+
+.validate{
+  align-self: center;
+  button {
+    padding: 10px 24px;
+    color: #616161;
+    border: #616161 solid 1px;
+    border-radius: 32px;
+    cursor: pointer;
+  }
+
+}

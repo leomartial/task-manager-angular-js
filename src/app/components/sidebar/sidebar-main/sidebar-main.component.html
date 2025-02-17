@@ -1,0 +1,31 @@
+<!-- <app-menu-item
+  *ngFor="let item of items"
+  [showIcon]="item.showIcon"
+  iconSrc="{{ item.iconSrc }}"
+  text="{{ item.text }}"
+/> -->
+
+<app-divider padding="8px 16px" />
+
+<app-checkbox-field
+  *ngFor="let list of Lists"
+  [idCf]= "list.id"
+  [isChecked]="list.selected"
+  iconCheckedSrc="assets/icons/check_box.svg"
+  iconUncheckedSrc="assets/icons/check_box_outline.svg"
+  text="{{ list.name }}"
+  endText="{{ list.tasks.length }}"
+  (cfOutput) = "handleCfOutput($event)"
+/> 
+
+<app-menu-item
+  iconSrc="assets/icons/add.svg"
+  text="Nouvelle liste"
+  padding="12px 16px"
+  [showIcon]="true"
+  [isTextEditing]="textEdit"
+  (click)="enableInput()"
+  (keydown)="handleEnterKeyDown($event)"
+  (input)="inputChange($event)"
+  (blurEvent)="disableInput()"
+/>

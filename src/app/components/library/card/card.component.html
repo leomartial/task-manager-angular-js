@@ -1,0 +1,54 @@
+<div class="card-header">
+  <span>{{ tasklist.name }}</span>
+  <img class="delete-list" src="assets/icons/delete.svg" alt="" (click)="handleDeleteList()" />
+</div>
+<div class="card-body">
+  <div class="add-item">
+    <app-menu-item
+      [showIcon]="true"
+      iconSrc="assets/icons/add.svg"
+      text="Ajouter une tâche"
+      textSize="14px"
+      (click)="handleAddNewTask()"
+    />
+    
+  </div>
+  <div *ngFor="let task of getTasks()">
+    <app-checkbox-field
+      *ngIf="!task.done"
+      iconCheckedSrc="assets/icons/radio_button_checked.svg"
+      iconUncheckedSrc="assets/icons/radio_button_unchecked.svg"
+      [isChecked]="task.done"
+      [idCf]="task.id"
+      text="{{ task.title }}"
+      padding="4px 16px"
+      [hostClick]="false"
+      (cfOutput)="handleCfOuput($event)"
+    />
+  </div>
+</div>
+
+<div class="card-footer">
+  <app-checkbox-field
+    iconUncheckedSrc="assets/icons/keyboard_arrow_right.svg"
+    iconCheckedSrc="assets/icons/keyboard_arrow_down.svg"
+    text="Terminées"
+    (cfOutput)="handleShowCompletedTask($event)"
+  />
+  <div *ngIf="showCompletedTasks">
+    <div *ngFor="let task of getTasks()">
+      <app-checkbox-field
+        class="task-done"
+        *ngIf="task.done"
+        iconCheckedSrc="assets/icons/radio_button_checked.svg"
+        iconUncheckedSrc="assets/icons/radio_button_unchecked.svg"
+        [isChecked]="task.done"
+        [idCf]="task.id"
+        text="{{ task.title }}"
+        padding="4px 16px"
+        [hostClick]="false"
+        (cfOutput)="handleCfOuput($event)"
+      />
+    </div>
+  </div>
+</div>

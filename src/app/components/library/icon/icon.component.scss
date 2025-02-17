@@ -1,0 +1,15 @@
+:host {
+  /*box model*/
+  width: var(--icon-width);
+  height: var(--icon-height);
+  padding: var(--icon-padding);
+  margin: var(--icon-margin);
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  /* visual*/
+  cursor: pointer;
+}

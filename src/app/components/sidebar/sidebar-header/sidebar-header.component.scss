@@ -1,0 +1,44 @@
+:host {
+  /* Box model */
+  width: 100%;
+  padding: 0px 16px;
+  margin-bottom: 32px;
+  /*layout*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+
+  /* Visuals */
+  overflow: hidden;
+  font-family: "roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444746;
+}
+.app {
+  /* Box model */
+  width: 100%;
+  padding: 0;
+  /*layout*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+.logo {
+  /* Box model */
+  width: 32px;
+  height: 32px;
+}
+.apptitle {
+  /* Box model */
+  width: 100%;
+}
+
+.endIcon{
+    cursor: pointer;
+    &:hover{
+        background:#eaecef;
+    }
+}

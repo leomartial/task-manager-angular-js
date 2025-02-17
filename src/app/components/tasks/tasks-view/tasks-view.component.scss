@@ -1,0 +1,28 @@
+:host{
+    /*box model*/
+    width: 100%;
+
+    /*layout*/
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.tasks-view{
+    height: calc(100vh - 48px - 160px);
+    overflow: auto;  
+}
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #E0E0E0;
+    border-radius: 100vw;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #9E9E9E;
+    border-radius: 100vw;
+   
+  }
+  

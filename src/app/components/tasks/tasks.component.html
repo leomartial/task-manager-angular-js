@@ -1,0 +1,19 @@
+<div class="taskview">
+  <app-tasks-header title="Tâches" [ntasks]="getAppTasks()"></app-tasks-header>
+  <app-tasks-view />
+</div>
+<!--edit a task-->
+<app-task-editor
+  [idTaskList]="getTaskClick().idList"
+  *ngIf="getTaskClick().idList > -1 && getTaskClick().idTask > -1"
+  (closeEditorEvent)="closeEditor()"
+  [task]="getTask()"
+/>
+
+<!--Create a task-->
+<app-task-editor
+  [idTaskList]="getTaskClick().idList"
+  *ngIf="getTaskClick().idTask == -2"
+  (closeEditorEvent)="closeEditor()"
+  [isEdit]="true"
+/>

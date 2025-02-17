@@ -1,0 +1,12 @@
+<app-divider *ngIf="showDividerTop" />
+<div class="checkbox-field-container">
+  <app-checkbox (click) = "onIconClick()" [iconSrc]="iconSrc()" />
+  <span class="checkbox-text">{{ text }}</span>
+  <span *ngIf="showEndText()" class="checkbox-end-text">{{ endText }}</span>
+  <!-- app-checkbox (click) = "onEndIconClick()" *ngIf="showEndIconCf" [iconSrc]="endIconSrc()"  / -->
+  <app-icon *ngIf="showDeleteIcon" iconSrc="assets/icons/delete.svg" (click)="onDeleteIconClick()"/>
+</div>
+<app-divider *ngIf="showDividerBottom" />
+<!--
+<span *ngIf="showEndIcon" class="checkbox-end-icon" >{{endIcon}}</span>
+-->

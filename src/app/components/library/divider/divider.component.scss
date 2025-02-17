@@ -1,0 +1,13 @@
+:host {
+    /*box model*/
+    padding: var(--divider-padding);
+    margin: var(--divider-margin);
+    /*layout*/
+    display: block;
+    /*Visual*/
+    &::after {
+      content: '';
+      display: block;
+      border-bottom: var(--divider-thickness) var(--divider-type) var(--divider-color);
+    }
+  }

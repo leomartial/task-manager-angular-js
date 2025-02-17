@@ -1,0 +1,21 @@
+//Variables
+$sidebar-width: 290px;
+$sidebar-background-color: white;
+$sidebar-text-color: 444746;
+$sidebar-icon-color: 444746;
+.sidebar{
+    /* Box model */
+    min-width: $sidebar-width;
+    height: calc(100vh - 48px);
+    padding: 32px 0px;
+    
+    
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+
+    /* Visual */
+    border-radius: 12px;
+    background-color: $sidebar-background-color;
+ 
+}

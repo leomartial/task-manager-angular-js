@@ -1,0 +1,7 @@
+<app-tasks-view-options ></app-tasks-view-options>
+<div class="tasks-view" [ngSwitch]="getView()">
+    <app-tasks-view-list *ngSwitchCase="'tasksViewList'"/>
+    <app-tasks-view-board *ngSwitchCase="'tasksViewBoard'"/>
+    <app-tasks-view-calendar *ngSwitchCase="'tasksViewCalendar'"/>
+</div>
+

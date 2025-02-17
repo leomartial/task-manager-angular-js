@@ -1,0 +1,11 @@
+<div *ngFor="let list of getLists()">
+  <app-card
+    *ngIf="isSelected(list.id)"
+    [idTaskList]="list.id"
+    [tasklist]="list"
+    margin="0px 0px 16px"
+    (cardOutput)="handleCardOutput($event)"
+    (addItemToCard)="handleAddItemToCard($event)"
+    (deleteCard)="handleDeleteCard($event)"
+    />
+</div>

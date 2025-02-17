@@ -1,0 +1,21 @@
+:host{
+    /*box model*/
+    width: 100%;
+    max-height: 48px;
+    margin-top: 24px;
+    /*layout*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.views{
+    /*layout*/
+    display: flex;
+    flex-direction: row;
+    /*visual*/
+    background-color: #EEEEEE;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;    
+}

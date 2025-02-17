@@ -1,0 +1,20 @@
+<div
+  [ngSwitch]="endElement"
+  class="menu-item"
+  [ngClass]="iconsHover ? 'menu-item-icon-hover' : 'menu-item-hover'"
+>
+  <img *ngIf="showIcon" src="{{ iconSrc }}" class="menu-item-icon" alt="" />
+  <span *ngIf="showText && !isTextEditing" class="menu-item-text">{{
+    text
+  }}</span>
+  <input *ngIf="isTextEditing" (blur)="onBlur($event)" />
+  <img
+    *ngSwitchCase="'endIcon'"
+    src="{{ endIconSrc }}"
+    class="menu-item-end-icon"
+    alt=""
+  />
+  <span *ngSwitchCase="'endText'" class="menu-item-end-text">{{
+    endText
+  }}</span>
+</div>
